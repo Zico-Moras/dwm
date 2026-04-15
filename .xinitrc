@@ -28,4 +28,4 @@ picom &
 
 # --- Final Step ---
 # Start the window manager script (must be 'exec' and the last line)
-exec ~/startdwm.sh
+exec ~/dwm/startdwm.sh
