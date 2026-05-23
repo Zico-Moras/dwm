@@ -28,4 +28,11 @@ picom &
 
 # --- Final Step ---
 # Start the window manager script (must be 'exec' and the last line)
+
+# Monitor Layout Setup
+if xrandr | grep -q "HDMI-2 connected"; then
+    xrandr --output HDMI-2 --mode 2560x1440 --left-of eDP-1 --output eDP-1 --mode 1920x1080 --primary
+else
+    xrandr --output eDP-1 --mode 1920x1080 --primary --output HDMI-2 --off
+fi
 exec ~/dwm/startdwm.sh
