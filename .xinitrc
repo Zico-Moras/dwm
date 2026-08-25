@@ -5,7 +5,7 @@
 export WINIT_UNIX_BACKEND=x11
 
 # Set keyboard to US layout and map Right Alt as a 'Compose Key' for symbols
-setxkbmap -layout us -option compose:ralt &
+setxkbmap -layout us -option compose:ralt,compose:rctrl
 
 # --- System Services ---
 # Blue light filter: Sets coords (Porto) and color temp (Day:6500K / Night:3500K)

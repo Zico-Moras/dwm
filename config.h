@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "wifi-float", NULL,      NULL,       0,           1,           1,           -1 },
 	{ "bt-float",  NULL,      NULL,       0,            1,           1,           -1 },
 	{ "audio-float",  NULL,      NULL,       0,         1,           1,           -1 },
+	{ "Anki",     NULL,       NULL,       0,            1,           1,           -1 },
 };
 
 /* layout(s) */
@@ -80,6 +81,7 @@ static const char *mutevol[] = { "/bin/sh", "-c", "wpctl set-mute @DEFAULT_AUDIO
 static const char *light_up[]   = { "/usr/bin/brightnessctl", "s", "2%+", NULL };
 static const char *light_down[] = { "/usr/bin/brightnessctl", "s", "2%-", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
+static const char *scrotcmd[] = { "sh", "-c", "scrot -s -e 'xclip -selection clipboard -t image/png -i $f'", NULL };
 static const char *lockcmd[] = { "slock", NULL };
 static const char *wificmd[] = { "alacritty", "--class", "wifi-float", "-e", "impala", NULL };
 static const char *btcmd[]   = { "alacritty", "--class", "bt-float", "-e", "bluetui", NULL };
@@ -124,7 +126,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol   } },
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = light_up } },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn, {.v = light_down } },
-	{ 0,                            XK_Print,                 spawn, {.v = flameshot } },
+	{ 0,                            XK_Print,                 spawn, {.v = scrotcmd } },
 	{ MODKEY|ShiftMask,             XK_l,                     spawn, {.v = lockcmd } },
 	{ MODKEY|ShiftMask,             XK_n,                     spawn, {.v = wificmd } },
 	{ MODKEY|ShiftMask,             XK_b,                     spawn, {.v = btcmd } },
