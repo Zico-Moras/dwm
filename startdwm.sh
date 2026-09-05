@@ -1,15 +1,15 @@
 #!/bin/sh
 
 # Set the wallpaper in the background
-feh --bg-scale ~/dwm/wallpapers/day/wallpaper_fallen_angel_close.jpg
+#feh --bg-scale ~/dwm/wallpapers/day/wallpaper_fallen_angel_close.jpg
 
-# Rotate/check wallpaper every 5 minutes
-#(
-#  while true; do
-#    ~/scripts/set_wallpaper.sh
-#    sleep 300
-#  done
-#) &
+ Rotate/check wallpaper every 5 minutes
+(
+  while true; do
+    ~/scripts/set_wallpaper.sh
+    sleep 300
+  done
+) &
 
 alacritty -e dijo &
 
