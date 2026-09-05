@@ -11,6 +11,8 @@ feh --bg-scale ~/dwm/wallpapers/day/wallpaper_fallen_angel_close.jpg
 #  done
 #) &
 
+alacritty -e dijo &
+
 while true; do
 	# Log stderror to a file
 	dwm 2>  ~/.dwm.log
